@@ -5,7 +5,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 //Require History Schema
-var Saved = require('./app/Components/Children/Saved.js');
+var Saved = require('./models/saved.js');
 
 // Create Instance of Express
 var app = express();
@@ -24,6 +24,7 @@ app.use(express.static('./public'));
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 mongoose.connect('mongodb://mongodb://heroku_744n9qqt:3mqnoliqp6netto2vsipvckf7h@ds151707.mlab.com:51707/heroku_744n9qqt');
+// mongoose.connect('mongodb://localhost');
 var db = mongoose.connection;
 
 db.on('error', function (err) {
